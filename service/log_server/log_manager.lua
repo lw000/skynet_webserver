@@ -1,5 +1,5 @@
 local skynet = require("skynet")
-local logic = require("log_logic")
+local logic = require("log_server.log_logic")
 require("common.export")
 
 local manager = {

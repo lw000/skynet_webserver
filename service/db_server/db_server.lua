@@ -1,9 +1,8 @@
 package.path = package.path .. ";./service/?.lua;"
-package.path = package.path .. ";./service/db_server/?.lua;"
 local skynet = require("skynet")
 local service = require("skynet.service")
-local database = require("database.database")
-local dbmgr = require("db_manager")
+local database = require("db_server.database.database")
+local dbmgr = require("db_server.db_manager")
 require("skynet.manager")
 require("common.export")
 require("core.define")

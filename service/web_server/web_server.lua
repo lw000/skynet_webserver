@@ -1,9 +1,8 @@
 package.path = package.path .. ";./service/?.lua;"
-package.path = package.path .. ";./service/web_server/?.lua;"
 local skynet = require("skynet")
 local service = require("skynet.service")
 local socket = require "skynet.socket"
-local logic = require("web_logic")
+local logic = require("web_server.web_logic")
 require("skynet.manager")
 require("common.export")
 require("core.define")
@@ -11,12 +10,12 @@ require("core.define")
 local command = {
     servertype = SERVICE_CONF.WEB.TYPE, -- 服务类型
     servername = SERVICE_CONF.WEB.NAME, -- 服务名
-    running = false,                    -- 服务器状态
     port = 8000,                        -- 默认监听端口
     protocol = "http",                  -- 协议
     agents = {},                        -- agent
     balance = 1,
     socketid = -1,
+    maxagent = 20,
 }
 
 -- 服务启动·接口
@@ -29,8 +28,6 @@ function command.START(port)
 
     math.randomseed(os.time())
 
-    command.running = true  -- 服务器状态
-
     command._run()
     
     return 0
@@ -38,14 +35,13 @@ end
 
 -- 服务停止·接口
 function command.STOP()
-    command.running = false
     socket.close(command.socketid)
     return 0
 end
 
 -- 主业务
 function command._run()
-	for i= 1, 20 do
+	for i= 1, command.maxagent do
 		command.agents[i] = skynet.newservice("agent", command.protocol)
     end
 

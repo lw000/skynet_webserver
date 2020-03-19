@@ -1,5 +1,5 @@
 local skynet = require("skynet")
-local logic = require("db_logic")
+local logic = require("db_server.db_logic")
 require("common.export")
 require("core.define")
 

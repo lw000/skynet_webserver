@@ -1,5 +1,5 @@
 local skynet = require("skynet")
-local logic = require("redis_logic")
+local logic = require("redis_server.redis_logic")
 require("common.export")
 require("core.define")
 

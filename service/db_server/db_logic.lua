@@ -1,6 +1,6 @@
 local skynet = require("skynet")
 local cjson = require("cjson")
-local database = require("database.database")
+local database = require("db_server.database.database")
 require("common.export")
 
 local logic = {

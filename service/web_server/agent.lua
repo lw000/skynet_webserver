@@ -1,5 +1,4 @@
 package.path = package.path .. ";./service/?.lua;"
-package.path = package.path .. ";./service/web_server/?.lua;"
 local skynet = require("skynet")
 local service = require("skynet.service")
 local socket = require("skynet.socket")
@@ -7,7 +6,7 @@ local httpd = require("http.httpd")
 local sockethelper = require( "http.sockethelper")
 local urllib = require("http.url")
 local cjson = require("cjson")
-local logic = require("web_logic")
+local logic = require("web_server.web_logic")
 require("skynet.manager")
 
 local table = table

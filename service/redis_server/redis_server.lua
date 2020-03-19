@@ -1,11 +1,9 @@
 package.path = package.path .. ";./service/?.lua;"
-package.path = package.path .. ";./service/redis_server/?.lua;"
-
 local skynet = require("skynet")
 local service = require("skynet.service")
 local redis = require("skynet.db.redis")
-local logic = require("redis_logic")
-local redismgr = require("redis_manager")
+local logic = require("redis_server.redis_logic")
+local redismgr = require("redis_server.redis_manager")
 
 require("skynet.manager")
 require("common.export")

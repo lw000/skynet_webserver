@@ -1,10 +1,8 @@
 package.path = package.path .. ";./service/?.lua;"
-package.path = package.path .. ";./service/log_server/?.lua;"
-
 local skynet = require("skynet")
 local service = require("skynet.service")
 local datacenter = require("skynet.datacenter")
-local logmgr = require("log_manager")
+local logmgr = require("log_server.log_manager")
 require("skynet.manager")
 require("core.define")
 

@@ -1,4 +1,4 @@
-package.path = package.path .. ";../common/?.lua;"
+-- package.path = package.path .. ";../common/?.lua;"
 require("common.core")
 require("common.dump")
 require("common.trackback")
