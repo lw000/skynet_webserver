@@ -2,7 +2,7 @@ require("common.export")
 
 local config = {
     -- 调试控制台端口
-    debug_port = 8001,
+    debug_port = 8000,
     -- web监听端口
     httpPort = 9000,
     -- db配置

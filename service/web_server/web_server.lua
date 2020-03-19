@@ -9,8 +9,8 @@ require("common.export")
 require("core.define")
 
 local command = {
-    servertype = SERVICE.TYPE.WEB,      -- 服务类型
-    servername = SERVICE.NAME.WEB,  	-- 服务名
+    servertype = SERVICE_CONF.WEB.TYPE, -- 服务类型
+    servername = SERVICE_CONF.WEB.NAME, -- 服务名
     running = false,                    -- 服务器状态
     port = 8000,                        -- 默认监听端口
     protocol = "http",                  -- 协议

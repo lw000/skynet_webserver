@@ -1,21 +1,12 @@
 require("common.export")
 
--------------------------------------------------------------------------------------
-SERVICE = {
-    -- 服务器类型
-    TYPE = {
-        WEB     = 1,    -- WEB服务
-        REDIS   = 2,    -- REDIS缓存服务
-        DB      = 3,    -- DB服务
-        LOG     = 4,    -- 日志服务
-    },
-    -- 服务名字
-    NAME = {
-        WEB     = ".web_server",        -- WEB服务
-        REDIS   = ".redis_server",      -- REDIS缓存服务
-        DB      = ".db_server",         -- DB服务
-        LOG     = ".log_server",        -- 日志服务
-    }
+-- -------------------------------------------------------------------------------------
+-- 服务配置
+SERVICE_CONF = {
+    WEB =   { TYPE= 1, NAME= ".web_server",      DESC= "web服务器" },
+    REDIS = { TYPE= 2, NAME= ".redis_server",    DESC= "缓存服务器" },
+    DB =    { TYPE= 3, NAME= ".db_server",       DESC= "数据服务器" },
+    LOG =   { TYPE= 4, NAME= ".log_server",      DESC= "日志服务器" },
 }
 
 -- 服务内部协议指令
@@ -38,7 +29,7 @@ LOG_CMD = {
     SUB_LOG = 0x0001,                           -- 请求日志
 }
 
--- dump(SERVICE, "SERVICE")
 -- dump(DB_CMD, "DB_CMD")
 -- dump(LOG_CMD, "LOG_CMD")
 -- dump(REDIS_CMD, "REDIS_CMD")
+-- dump(SERVICE_CONF, "SERVICE_CONF")

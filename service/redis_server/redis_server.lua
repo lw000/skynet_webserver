@@ -75,8 +75,8 @@ local function test_redis()
 end
 
 local command = {
-	servertype = SERVICE.TYPE.REDIS, 	-- 服务类型
-	servername = SERVICE.NAME.REDIS,  	-- 服务名
+	servertype = SERVICE_CONF.REDIS.TYPE, 	-- 服务类型
+	servername = SERVICE_CONF.REDIS.NAME,  	-- 服务名
 	running = false,					-- 服务器状态
 	redisConn = nil,					-- redis连接
 	syncInterval = 30, 					-- 同步DB时间（单位·秒）

@@ -9,7 +9,7 @@ local logic = {}
 -- 写日志
 function logic.writeLog(content)
     assert(content ~= nil)
-    skyhelper.sendLocal(SERVICE.NAME.LOG, "message", LOG_CMD.MDM_LOG, LOG_CMD.SUB_LOG, content)
+    skyhelper.sendLocal(SERVICE_CONF.LOG.NAME, "message", LOG_CMD.MDM_LOG, LOG_CMD.SUB_LOG, content)
 end
 
 return logic
